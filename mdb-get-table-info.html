@@ -1,0 +1,102 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A data component to supply information about a given table.
+
+
+    <mdb-get-table-info tableId='1'></mdb-get-table-info>
+
+
+@demo
+-->
+<dom-module id="mdb-get-table-info">
+
+  <style>
+    :host {
+      display: block;
+      box-sizing: border-box;
+      font-family: Roboto, Noto;
+    }
+  </style>
+
+  <template>
+
+    <h3>Mock Example</h3>
+
+        <div>{"id": 1, "label": "T0002_PARTY_SALES", "columns": [</br></br>
+         { "id": "36202641", "label": "STATE" },</br>
+         { "id": "36202642", "label": "BILL-STATE" },</br>
+         { "id": "36202643", "label": "ORDER-STATUS" },</br>
+         { "id": "36202644", "label": "CUSTOMER-NAME" },</br>
+         { "id": "36202645", "label": "BILL-ZIP" },</br>
+         { "id": "36202646", "label": "ORDER-DATE" },</br>
+         { "id": "36202647", "label": "ADDRESS-LINE1" },</br>
+         { "id": "36202648", "label": "BRTH_DATE" },</br>
+         { "id": "36202649", "label": "CREDIT-CARD-NAME" },</br>
+         { "id": "36202650", "label": "CUSTOMER-LIFETIME-VALUE" },</br>
+         { "id": "36202651", "label": "CREDIT-CARD-NUMBER" },</br>
+         { "id": "36202652", "label": "CUSTOMER-EMAIL-ADDRESS" },</br>
+         { "id": "36202653", "label": "CUSTOMER-SEGMENT-CD" },</br>
+         { "id": "36202654", "label": "CUSTOMER-OTHER-EMAIL" },</br>
+         { "id": "36202655", "label": "CUSTOMER-CELL" },</br>
+         { "id": "36202656", "label": "CUSTOMER-ALT-PHONE" },</br>
+         { "id": "36202657", "label": "ENTERPRISE-ID" },</br>
+         { "id": "36202658", "label": "BAN" },</br>
+         { "id": "36202659", "label": "BILL-ADDR" },</br>
+         { "id": "36202660", "label": "CUSTOMER-EMAIL" },</br>
+         { "id": "36202661", "label": "CUSTOMER-HOME-PHONE" },</br>
+         { "id": "36202662", "label": "CUSTOMER-WORK-PHONE" },</br>
+         { "id": "36202663", "label": "ZIPCODE" },</br>
+         { "id": "36202664", "label": "ORDER-AMOUNT" },</br>
+         { "id": "36202665", "label": "CREDIT-CARD-SECURITY-CD" },</br>
+         { "id": "36202666", "label": "BILL-CITY" },</br>
+         { "id": "36202667", "label": "CITY" },</br>
+         { "id": "36202668", "label": "ORDER-ID" },</br>
+         { "id": "36202669", "label": "SALES-AGENT" },</br>
+         { "id": "36202670", "label": "CREDIT-CARD-EXP-DATE" }
+       ]}</div>
+
+    <content></content>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'mdb-get-table-info',
+
+  properties: {
+      // An identifier that uniquely identifies a column.
+      columnId: Number,
+
+      // An array of objects where each object represents a table associated with the given conceptId.
+      data: { type: Array, value: function() { return {}; }, readOnly: true },
+  
+      // A table name.
+      tableName: { type: String, readOnly: true },
+
+      // An identifier that uniquely identifies a table.
+      tableId: { type: Number, readOnly: true },
+
+      // The maximum number of column entries to return.  Works in conjunction with the offset parameter.
+      limit: { type: Number, value: 20 },
+
+      // The offset of the first column to return from the backing data source.  Works in conjunction with the limit parameter.
+      offset: { type: Number, value: 0 }
+
+   }
+
+  });
+
+</script>
