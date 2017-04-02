@@ -47,3 +47,11 @@ Supplies a list of columns (identifiers and labels) for a given table.
     <mdb-get-table-info tableId='1'></mdb-get-table-info>
 
 
+# mdb-get-column-concepts
+
+A data component that supplies information about concepts related to a given column.  Returns a list of zero or more concepts ranked in descending order where the most likely represention is at the top of the list.
+
+The ranking is based on assessments made either by the system or by a human.
+
+
+    <mdb-get-column-concepts columnId='1'></<mdb-get-column-concepts>
