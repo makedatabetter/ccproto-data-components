@@ -14,11 +14,11 @@ A Polymer data component that returns a list of applications that have been asso
 
 Example:
 
-    <mdb-list-applications conceptId='1'></mdb-list-applications>
+    <gid-list-applications conceptId='1'></gid-list-applications>
 
 @demo
 -->
-<dom-module id="mdb-list-applications">
+<dom-module id="gid-list-applications">
 
   <style>
     :host {
@@ -35,7 +35,7 @@ Example:
     <div>{"label": "Automated Bill Audit", "id": 2, "unconfirmed": 1, "confirmed": 0},</div>
     <div>{"label": "Customer Information System", "id": 3, "unconfirmed": 5, "confirmed": 1},</div>
     <div>{"label": "Advance Payment and Deposit", "id": 4, "unconfirmed": 1, "confirmed": 0},</div>
- 
+ `
 
 
     <content></content>
@@ -47,7 +47,7 @@ Example:
 
   Polymer({
 
-    is: 'mdb-list-applications',
+    is: 'gid-list-applications',
 
   properties: {
       // A number that uniquely identifies a given concept.

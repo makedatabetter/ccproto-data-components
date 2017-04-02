@@ -1,5 +1,5 @@
 {
-  "name": "mdb-list-applications",
+  "name": "gid-list-applications",
   "version": "1.0.0",
   "authors": [
     "Anonymous <anonymous@example.com>"
@@ -9,11 +9,11 @@
     "web-component",
     "web-components",
     "polymer",
-    "mdb-list-applications"
+    "gid-list-applications"
   ],
-  "main": "mdb-list-applications.html",
+  "main": "gid-list-applications.html",
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/<USERNAME>/mdb-list-applications/",
+  "homepage": "https://github.com/<USERNAME>/gid-list-applications/",
   "ignore": [
     "/.*",
     "/test/",
