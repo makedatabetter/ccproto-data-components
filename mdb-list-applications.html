@@ -1,0 +1,115 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A Polymer data component that returns a list of applications that have been associated with a given concept.
+
+Example:
+
+    <mdb-list-applications conceptId='1'></mdb-list-applications>
+
+@demo
+-->
+<dom-module id="mdb-list-applications">
+
+  <style>
+    :host {
+      display: block;
+      box-sizing: border-box;
+      font-family: Roboto, Noto;
+    }
+  </style>
+
+  <template>
+
+    <h3>Mock Examples</h3>
+    <div>{"label": "Account Activity Notification", "id": 1, "unconfirmed": 1, "confirmed": 0},</div>
+    <div>{"label": "Automated Bill Audit", "id": 2, "unconfirmed": 1, "confirmed": 0},</div>
+    <div>{"label": "Customer Information System", "id": 3, "unconfirmed": 5, "confirmed": 1},</div>
+    <div>{"label": "Advance Payment and Deposit", "id": 4, "unconfirmed": 1, "confirmed": 0},</div>
+ 
+
+
+    <content></content>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'mdb-list-applications',
+
+  properties: {
+      // A number that uniquely identifies a given concept.
+      conceptId: { type: Number, readOnly: true },
+
+      // An array of objects where each object represents an application associated with the given conceptId.
+      data: { type: Array, value: function() { return {}; }, readOnly: true },
+  
+      // An application name.
+      appName: { type: String, readOnly: true },
+
+      // An identifier that uniquely identifies an application.
+      appId: { type: Number, readOnly: true },
+
+      // The number of columns that potentially represent this concept within databases associated with the given application. 
+      unconfirmed: { type: Number, readOnly: true },
+
+      // The number of columns that have been confirmed as representing a concept.
+      // Scope is restricted to the set of columns associated with a specific application.
+      confirmed: { type: Number, readOnly: true },
+
+      // The maximum number of entries to return from a backing data source.  Works in conjunction with the offset parameter.
+      limit: { type: Number, value: 20 },
+
+      // The offset of the first record to return from the backing data source.  Works in conjunction with the limit parameter.
+      offset: { type: Number, value: 0 },
+
+      // This doesn't work as intended.  What is needed to populate mock data for the demo page?
+      created: function() {
+        this.applications = _applications;
+      },
+      // Mock data 
+      _applications: [
+            {"label": "Account Activity Notification", "id": 1, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Automated Bill Audit", "id": 2, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Customer Information System", "id": 3, "unconfirmed": 5, "confirmed": 1},
+            {"label": "Advance Payment and Deposit", "id": 4, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Customer Information Revenue Management System", "id": 5, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Adjustments", "id": 6, "unconfirmed": 1, "confirmed": 1},
+            {"label": "Mail Automation and Control System", "id": 7, "unconfirmed": 0, "confirmed": 0},
+            {"label": "Billing Data Repository", "id": 8, "unconfirmed": 7, "confirmed": 0},
+            {"label": "Billing Operations Reporting Group", "id": 9, "unconfirmed": 0, "confirmed": 0},
+            {"label": "Contract Administration Reference System", "id": 10, "unconfirmed": 0, "confirmed": 0},
+            {"label": "Custom Rating Engine", "id": 11, "unconfirmed": 0, "confirmed": 0},
+            {"label": "Enterprise Customer Billing", "id": 12, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Enterprise Product Catalog", "id": 13, "unconfirmed": 0, "confirmed": 0},
+            {"label": "Global Billing Platform", "id": 14, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Integrated Billing System", "id": 15, "unconfirmed": 4, "confirmed": 0},
+            {"label": "Invoice Entry System", "id": 16, "unconfirmed": 0, "confirmed": 0},
+            {"label": "Order Managment Tool", "id": 17, "unconfirmed": 2, "confirmed": 0},
+            {"label": "Master Customer Database", "id": 18, "unconfirmed": 17, "confirmed": 0},
+            {"label": "Order Control System", "id": 19, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Order Negotiation System", "id": 20, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Oracle Accounts Receivables", "id": 21, "unconfirmed": 3, "confirmed": 0},
+            {"label": "Order Tracking and Information System", "id": 22, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Product Managment System", "id": 23, "unconfirmed": 0, "confirmed": 0},
+            {"label": "Intercompany Settlements System", "id": 24, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Invoice Verification System", "id": 25, "unconfirmed": 1, "confirmed": 0},
+            {"label": "Usage Processing System", "id": 26, "unconfirmed": 1, "confirmed": 0}],
+
+   }
+
+  });
+
+</script>
