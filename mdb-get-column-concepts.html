@@ -1,0 +1,92 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A data component to get information about concepts related to a given column.  Returns a list of zero or more concepts ranked in descending order where the most likely represention is at the top of the list.
+
+The ranking is based on assessments made either by the system or by a human.
+
+
+    <mdb-get-column-concepts columnId='1'></<mdb-get-column-concepts>
+
+
+@demo
+-->
+<dom-module id="mdb-get-column-concepts">
+
+  <style>
+    :host {
+      display: block;
+      box-sizing: border-box;
+      font-family: Roboto, Noto;
+    }
+  </style>
+
+  <template>
+
+    <h3>Mock Example</h3>
+
+    <div>
+      { "id": "1", "label": "BRTH_DATE" }, "concepts": [</br></br>
+         { "id": "641", "label": "Date of Birth", "assessment": {"likelihood": 0.85, "method": 1 },</br>
+         { "id": "688", "label": "Registration Date", "assessment": {"likelihood": 0.50, "method": 1 },</br>
+         { "id": "688", "label": "Order Date", "assessment": {"likelihood": 0.35, "method": 1 },</br>
+         { "id": "362", "label": "Credit Card Expiration Date", "assessment": {"likelihood": 0.0, "method": 2 }
+       ]}</div>
+
+    <content></content>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'mdb-get-column-concepts',
+
+  properties: {
+      // An identifier that uniquely identifies a column, used as a required input parameter.
+      columnId: Number,
+
+      // An object containing information about concepts related to a given column.
+      data: { type: Object, value: function() { return {}; }, readOnly: true },
+  
+      // A column name.
+      columnName: { type: String, readOnly: true },
+
+      // An identifier that uniquely identifies a concept.
+      conceptId: Number,
+
+      // The name of the concept.
+      conceptName: { type: String, readOnly: true },
+
+      // The results of either a human or machine assessment of the likelihood a given column represents a particular concept.
+      assessment: { type: Object, value: function() { return {}; }, readOnly: true },
+
+      // A number on a scale from 0.0 to 1.0 representing the likelihood the given column represents a particular concept.   
+      likelihood: Number,
+
+     // The method used to make an assessment of the likelihood a given column represents a particular concept.  Assessment methods could represent one of several machine learning techniques or one or more methods based on human judgement.  Assuming that initially we have two methods, one machine based, and the other based on judgement of the data steward using the concept curation tool.
+  
+      method: Number,
+
+      // The maximum number of column entries to return.  Works in conjunction with the offset parameter.
+      limit: { type: Number, value: 20 },
+
+      // The offset of the first column to return from the backing data source.  Works in conjunction with the limit parameter.
+      offset: { type: Number, value: 0 }
+
+   }
+
+  });
+
+</script>
