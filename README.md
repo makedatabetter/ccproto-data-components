@@ -55,3 +55,10 @@ The ranking is based on assessments made either by the system or by a human.
 
 
     <mdb-get-column-concepts columnId='1'></<mdb-get-column-concepts>
+
+# mdb-get-column-samples
+
+A data component to get sample values for a given column.
+
+
+    <mdb-get-column-samples columnId='1'></<mdb-get-column-samples>

@@ -1,0 +1,85 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A data component to get sample values from a given column.
+
+
+
+    <mdb-get-column-samples columnId='1'></<mdb-get-column-samples>
+
+
+@demo
+-->
+<dom-module id="mdb-get-column-samples">
+
+  <style>
+    :host {
+      display: block;
+      box-sizing: border-box;
+      font-family: Roboto, Noto;
+    }
+  </style>
+
+  <template>
+
+    <h3>Mock Example</h3>
+
+    <div>
+      { "id": "1", "label": "BRTH_DATE" }, "samples": [
+         "03/19/1976",
+         "04/17/1945",
+         "05/12/1991",
+         "05/21/1987",
+         "08/22/2000",
+         "08/09/1995",
+         "10/05/1997",
+         "11/27/1955",
+         "09/03/1964",
+         "09/12/1991",
+         "07/30/1967"
+      ]}</div>
+
+    <content></content>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'mdb-get-column-samples',
+
+  properties: {
+      // An identifier that uniquely identifies a column, used as a required input parameter.
+      columnId: Number,
+
+      // An object containing sample values for a given column.
+      data: { type: Object, value: function() { return {}; }, readOnly: true },
+  
+      // A column name.
+      columnName: { type: String, readOnly: true },
+
+      // An array of sample values 
+      samples: { type: Array, value: function() { return []; }, readOnly: true },
+
+      // The maximum number of column entries to return.  Works in conjunction with the offset parameter.
+      limit: { type: Number, value: 10 },
+
+      // The offset of the first column to return from the backing data source.  Works in conjunction with the limit parameter.
+      offset: { type: Number, value: 0 }
+
+   }
+
+  });
+
+</script>
