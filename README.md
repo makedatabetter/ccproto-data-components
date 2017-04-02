@@ -39,4 +39,11 @@ Supplies information about the tables associated with a given schema, and a give
     <mdb-list-tables schemaId='1' conceptId='1'></mdb-list-tables>
 
 
+# mdb-get-table-info
+
+Supplies a list of columns (identifiers and labels) for a given table.
+
+
+    <mdb-get-table-info tableId='1'></mdb-get-table-info>
+
 
