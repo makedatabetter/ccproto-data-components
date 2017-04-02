@@ -1,0 +1,109 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A data component to supply information about the tables associated with a given schema, and a given concept.
+
+
+    <mdb-list-tables schemaId='1' conceptId='1'></mdb-list-tables>
+
+
+@demo
+-->
+<dom-module id="mdb-list-tables">
+
+  <style>
+    :host {
+      display: block;
+      box-sizing: border-box;
+      font-family: Roboto, Noto;
+    }
+  </style>
+
+  <template>
+
+    <h3>Mock Examples</h3>
+
+    <div>{"label": "T0001_INVENTORY_DETAILS", "id": 1, "unconfirmed": 0, "confirmed": 0}</div>
+    <div>{"label": "T0002_PARTY_SALES", "id": 2, "unconfirmed": 1, "confirmed": 0}</div>
+    <div>{"label": "T0003_PARTY", "id": 3, "unconfirmed": 1, "confirmed": 0}</div>
+    <div>{"label": "T0004_PAYMENTS", "id": 4, "unconfirmed": 1, "confirmed": 0}</div>
+    <div>{"label": "T0005_REVENUE_SALES", "id": 5, "unconfirmed": 1, "confirmed": 0}</div>
+    <div>{"label": "T0006_ACCOUNT_CONTACT", "id": 6, "unconfirmed": 3, "confirmed": 0}</div>
+    <div>{"label": "T0007_ISO_CNTRY", "id": 7, "unconfirmed": 0, "confirmed": 0}</div>
+
+
+    <content></content>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'mdb-list-tables',
+
+  properties: {
+      // A number that uniquely identifies a given concept.
+      conceptId: Number,
+
+      // An identifier that uniquely identifies a schema.
+      schemaId: Number,
+
+      // An array of objects where each object represents a table associated with the given conceptId.
+      data: { type: Array, value: function() { return {}; }, readOnly: true },
+  
+      // A table name.
+      tableName: { type: String, readOnly: true },
+
+      // An identifier that uniquely identifies a table.
+      tableId: { type: Number, readOnly: true },
+
+      // The number of columns that potentially represent this concept within the given database. 
+      unconfirmed: { type: Number, readOnly: true },
+
+      // The number of columns that have been confirmed as representing a concept.
+      // Scope is restricted to the set of columns associated with a specific application.
+      confirmed: { type: Number, readOnly: true },
+
+      // The maximum number of entries to return from a backing data source.  Works in conjunction with the offset parameter.
+      limit: { type: Number, value: 20 },
+
+      // The offset of the first record to return from the backing data source.  Works in conjunction with the limit parameter.
+      offset: { type: Number, value: 0 },
+
+      // This doesn't work as intended.  What is needed to populate mock data for the demo page?
+      created: function() {
+        this.tables = _tables;
+      },
+      // Mock data 
+     _tables: [
+            {"label": "T0001_INVENTORY_DETAILS", "id": 1, "unconfirmed": 0, "confirmed": 0},
+            {"label": "T0002_PARTY_SALES", "id": 2, "unconfirmed": 1, "confirmed": 0},
+            {"label": "T0003_PARTY", "id": 3, "unconfirmed": 1, "confirmed": 0},
+            {"label": "T0004_PAYMENTS", "id": 4, "unconfirmed": 1, "confirmed": 0},
+            {"label": "T0005_REVENUE_SALES", "id": 5, "unconfirmed": 1, "confirmed": 0},
+            {"label": "T0006_ACCOUNT_CONTACT", "id": 6, "unconfirmed": 3, "confirmed": 0},
+            {"label": "T0007_ISO_CNTRY", "id": 7, "unconfirmed": 0, "confirmed": 0},
+            {"label": "T0008_CUSTOMER_MASTER", "id": 8, "unconfirmed": 0, "confirmed": 0},
+            {"label": "T0009_SERVICE_XREF", "id": 9, "unconfirmed": 0, "confirmed": 0},
+            {"label": "T0010_QUALIFIED_SALES", "id": 10, "unconfirmed": 0, "confirmed": 0},
+            {"label": "T0011_CUSTOMER_DEMOGRAPHICS", "id": 11, "unconfirmed": 0, "confirmed": 0},
+            {"label": "T0012_PARTY_ACNT", "id": 12, "unconfirmed": 0, "confirmed": 0},
+            {"label": "T0013_PARTY_PRODUCT", "id": 13, "unconfirmed": 1, "confirmed": 0},
+            {"label": "T0014_PARTY_HISTORY", "id": 14, "unconfirmed": 0, "confirmed": 0},
+            {"label": "T0015_ACNT_ORDERS", "id": 15, "unconfirmed": 1, "confirmed": 0}]
+   }
+
+  });
+
+</script>
