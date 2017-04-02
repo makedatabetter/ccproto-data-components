@@ -1,0 +1,118 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A Polymer data component that returns a list of databases that have been associated with a given concept.
+
+Example:
+
+    <mdb-list-databases conceptId='1'></mdb-list-databases>
+
+@demo
+-->
+<dom-module id="mdb-list-databases">
+
+  <style>
+    :host {
+      display: block;
+      box-sizing: border-box;
+      font-family: Roboto, Noto;
+    }
+  </style>
+
+  <template>
+
+    <h3>Mock Examples</h3>
+    <div>{"label": "AAN DB", "id": 1, "unconfirmed": 1, "confirmed": 0}</div>
+    <div>{"label": "ABA", "id": 2, "unconfirmed": 1, "confirmed": 0}</div>
+    <div>{"label": "CIS", "id": 3, "unconfirmed": 5, "confirmed": 1}</div>
+    <div>{"label": "ADJDB", "id": 6, "unconfirmed": 1, "confirmed": 1}</div>
+    <div> {"label": "IESDB", "id": 16, "unconfirmed": 0, "confirmed": 0}</div>
+
+
+    <content></content>
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'mdb-list-databases',
+
+  properties: {
+      // A number that uniquely identifies a given concept.
+      conceptId: Number,
+
+      // An identifier that uniquely identifies an application.
+      appId: Number,
+
+      // An array of objects where each object represents an application associated with the given conceptId.
+      data: { type: Array, value: function() { return {}; }, readOnly: true },
+  
+      // A database name.
+      dbName: { type: String, readOnly: true },
+
+      // An identifier that uniquely identifies a database.
+      dbId: { type: Number, readOnly: true },
+
+      // The number of columns that potentially represent this concept within the given database. 
+      unconfirmed: { type: Number, readOnly: true },
+
+      // The number of columns that have been confirmed as representing a concept.
+      // Scope is restricted to the set of columns associated with a specific application.
+      confirmed: { type: Number, readOnly: true },
+
+      // The maximum number of entries to return from a backing data source.  Works in conjunction with the offset parameter.
+      limit: { type: Number, value: 20 },
+
+      // The offset of the first record to return from the backing data source.  Works in conjunction with the limit parameter.
+      offset: { type: Number, value: 0 },
+
+      // This doesn't work as intended.  What is needed to populate mock data for the demo page?
+      created: function() {
+        this.databases = _databases;
+      },
+      // Mock data 
+      _databases: [
+            {"label": "AAN DB", "id": 1, "unconfirmed": 1, "confirmed": 0},
+            {"label": "ABA", "id": 2, "unconfirmed": 1, "confirmed": 0},
+            {"label": "CIS", "id": 3, "unconfirmed": 5, "confirmed": 1},
+            {"label": "APDeposit", "id": 4, "unconfirmed": 1, "confirmed": 0},
+            {"label": "CIRMS", "id": 5, "unconfirmed": 1, "confirmed": 0},
+            {"label": "ADJDB", "id": 6, "unconfirmed": 1, "confirmed": 1},
+            {"label": "Macs", "id": 7, "unconfirmed": 0, "confirmed": 0},
+            {"label": "BDR", "id": 8, "unconfirmed": 7, "confirmed": 0},
+            {"label": "B-OPSRG", "id": 9, "unconfirmed": 0, "confirmed": 0},
+            {"label": "CARS-DB", "id": 10, "unconfirmed": 0, "confirmed": 0},
+            {"label": "CRE", "id": 11, "unconfirmed": 0, "confirmed": 0},
+            {"label": "ECB", "id": 12, "unconfirmed": 1, "confirmed": 0},
+            {"label": "EPCAT", "id": 13, "unconfirmed": 0, "confirmed": 0},
+            {"label": "GBP", "id": 14, "unconfirmed": 1, "confirmed": 0},
+            {"label": "IBS", "id": 15, "unconfirmed": 4, "confirmed": 0},
+            {"label": "IESDB", "id": 16, "unconfirmed": 0, "confirmed": 0},
+            {"label": "OMT", "id": 17, "unconfirmed": 2, "confirmed": 0},
+            {"label": "MCDB", "id": 18, "unconfirmed": 17, "confirmed": 0},
+            {"label": "OCS", "id": 19, "unconfirmed": 1, "confirmed": 0},
+            {"label": "ONS", "id": 20, "unconfirmed": 1, "confirmed": 0},
+            {"label": "OARS", "id": 21, "unconfirmed": 3, "confirmed": 0},
+            {"label": "OTIS", "id": 22, "unconfirmed": 1, "confirmed": 0},
+            {"label": "PMS-DB", "id": 23, "unconfirmed": 0, "confirmed": 0},
+            {"label": "ISS", "id": 24, "unconfirmed": 1, "confirmed": 0},
+            {"label": "IVS", "id": 25, "unconfirmed": 1, "confirmed": 0},
+            {"label": "UPS", "id": 26, "unconfirmed": 1, "confirmed": 0}],
+
+   }
+
+  });
+
+</script>
