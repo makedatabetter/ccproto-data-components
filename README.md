@@ -1,17 +1,42 @@
 # mdb-list-applications
 
-A data component that returns a list of applications that have been associated with a given concept.
-
+A data component that provides a list of applications associated with a given concept.  
 
     <mdb-list-applications conceptId='1'></mdb-list-applications>
+
+For each application, the result set includes:
+
+* application name
+* application id
+* count of unconfirmed instances
+* count of confirmed instance
+
+Expectation is that UI components, when sorting this list in recommended order, will rank applications having the largest number of instances (confirmed + unconfirmed) above those having fewer.
+
 
 
 # mdb-list-databases
 
-A data component that returns a list of databases that have been associated with a given concept.
+Supplies information about the databases associated with a given application, and a given concept.
 
 
-    <mdb-list-databases conceptId='1' appId='1'></mdb-list-databases>
+    <mdb-list-databases appId='1' conceptId='1'></mdb-list-databases>
+
+
+# mdb-list-schemas
+
+Supplies information about the schemas associated with a given database, and a given concept.
+
+
+    <mdb-list-schemas dbId='1' conceptId='1'></mdb-list-schemas>
+
+
+# mdb-list-tables
+
+Supplies information about the tables associated with a given schema, and a given concept.
+
+
+    <mdb-list-tables schemaId='1' conceptId='1'></mdb-list-tables>
 
 
 
