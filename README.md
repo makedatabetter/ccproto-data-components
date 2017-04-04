@@ -8,8 +8,8 @@ For each application, the result set includes:
 
 * application name
 * application id
-* count of unconfirmed instances
-* count of confirmed instance
+* count of unconfirmed columns identified as representing the given concept
+* count of confirmed columns
 
 Expectation is that UI components, when sorting this list in recommended order, will rank applications having the largest number of instances (confirmed + unconfirmed) above those having fewer.
 
