@@ -1,4 +1,4 @@
-# gid-list-applications
+## gid-list-applications
 
 A data component that provides a list of applications associated with a given concept.  
 
@@ -15,7 +15,7 @@ Expectation is that UI components, when sorting this list in recommended order, 
 
 
 
-# gid-list-databases
+## gid-list-databases
 
 Supplies information about the databases associated with a given application, and a given concept.
 
@@ -23,7 +23,7 @@ Supplies information about the databases associated with a given application, an
     <gid-list-databases appId='1' conceptId='1'></gid-list-databases>
 
 
-# gid-list-schemas
+## gid-list-schemas
 
 Supplies information about the schemas associated with a given database, and a given concept.
 
@@ -31,7 +31,7 @@ Supplies information about the schemas associated with a given database, and a g
     <gid-list-schemas dbId='1' conceptId='1'></gid-list-schemas>
 
 
-# gid-list-tables
+## gid-list-tables
 
 Supplies information about the tables associated with a given schema, and a given concept.
 
@@ -39,7 +39,7 @@ Supplies information about the tables associated with a given schema, and a give
     <gid-list-tables schemaId='1' conceptId='1'></gid-list-tables>
 
 
-# gid-get-table-info
+## gid-get-table-info
 
 Supplies a list of columns (identifiers and labels) for a given table.
 
@@ -47,7 +47,7 @@ Supplies a list of columns (identifiers and labels) for a given table.
     <gid-get-table-info tableId='1'></gid-get-table-info>
 
 
-# gid-get-column-concepts
+## gid-get-column-concepts
 
 A data component that supplies information about concepts related to a given column.  Returns a list of zero or more concepts ranked in descending order where the most likely represention is at the top of the list.
 
@@ -56,9 +56,72 @@ The ranking is based on assessments made either by the system or by a human.
 
     <gid-get-column-concepts columnId='1'></<gid-get-column-concepts>
 
-# gid-get-column-samples
+## gid-get-column-samples
 
 A data component to get sample values for a given column.
 
 
     <gid-get-column-samples columnId='1'></<gid-get-column-samples>
+
+
+# Data components for Information Architect > Concepts
+
+
+## gid-list-concepts
+
+A data component to get list of concepts and its metadata for given user id
+
+    <gid-list-concepts userId='1'></<gid-list-concepts>
+
+API endpoint:
+
+    /concepts
+
+The output of this components will be as follows:
+
+    {
+      "concepts": [
+        {
+          "id": "100462",
+          "label": "CASE-NUMBER",
+          "owner": {
+            "id": "111001",
+            "label": "Angela"
+          },
+          "predictedColumns": 0,
+          "confirmedColumns": 0,
+          "eta": 0,
+          "coverage": 0,
+          "impactArea": [
+            {
+              "id": "120002",
+              "label": "Credit Risk"
+            },
+            {
+              "id": "120001",
+              "label": "GDPR"
+            }
+          ],
+          "classificationAccuracyPercentage": 5,
+          "applications": [
+            {
+              "id": "100492",
+              "label": "Universal Biller"
+            },
+            {
+              "id": "100252",
+              "label": "Supplier Management Program"
+            },
+            {
+              "id": "100495",
+              "label": "Field Service Support"
+            },
+            {
+              "id": "100447",
+              "label": "Contract Mgmt System"
+            }
+          ]
+        }    
+      ]
+    }
+
