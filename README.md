@@ -75,7 +75,7 @@ A data component to get list of concepts and its metadata for given user id
 
 API endpoint:
 
-    /concepts
+    GET /concepts
 
 The output of this components will be as follows:
 
@@ -125,3 +125,115 @@ The output of this components will be as follows:
       ]
     }
 
+## gid-concept-details
+
+A data component to get detailed information for a given concept and user id
+
+    <gid-concept-details conceptId='1' userId='1'></<gid-concept-details>
+
+API endpoint:
+
+    GET /concepts/{id}
+
+The output of this components will be as follows:
+
+    {
+      "concept": {
+        "id": "100462",
+        "label": "FICO-Score",
+        "owner": {
+          "id": "111001",
+          "label": "Angela"
+        },
+        "predictedColumns": 5,
+        "confirmedColumns": 3,
+        "eta": 0,
+        "coverage": 0.001,
+        "impactArea": [
+          {
+            "id": "120002",
+            "label": "Credit Risk"
+          },
+          {
+            "id": "120001",
+            "label": "GDPR"
+          }
+        ],
+        "classificationAccuracyPercentage": 5,
+        "applications": [
+          {
+            "id": "100492",
+            "label": "Universal Biller"
+          },
+          {
+            "id": "100252",
+            "label": "Supplier Management Program"
+          }
+        ],
+        "synonyms": [
+          {
+            "id": "100052",
+            "label": "DOB",
+            "relevance": 45
+          },
+          {
+            "id": "100053",
+            "label": "Birthday",
+            "relevance": 65
+          }
+        ],
+        "patterns": [
+          {
+            "id": "100152",
+            "label": "DD/MM/YY",
+            "relevance": 37
+          },
+          {
+            "id": "100153",
+            "label": "MM/YY/DD",
+            "relevance": 54
+          }
+        ],
+        "relatedConcepts": [
+          {
+            "id": "100652",
+            "label": "First Name",
+            "relevance": 44
+          },
+          {
+            "id": "100653",
+            "label": "Last Name",
+            "relevance": 32
+          }
+        ],
+        "exampleValues": [
+          {
+            "id": "200652",
+            "label": "21/03/2007",
+            "relevance": 90
+          },
+          {
+            "id": "200653",
+            "label": "08/07/2006",
+            "relevance": 80
+          }
+        ],
+        "exampleColumns": [
+          {
+            "id": "300652",
+            "label": "DOB",
+            "relevance": 90
+          },
+          {
+            "id": "300653",
+            "label": "BIRTH_DAY",
+            "relevance": 80
+          },
+          {
+            "id": "300654",
+            "label": "ORDER_DATE",
+            "relevance": 50
+          }
+        ]
+      }
+    }
