@@ -174,65 +174,76 @@ The output of this components will be as follows:
           {
             "id": "100052",
             "label": "DOB",
-            "relevance": 45
+            "relevance": 45,
+            "verified": "Y"
           },
           {
             "id": "100053",
             "label": "Birthday",
-            "relevance": 65
+            "relevance": 65,
+            "verified": "N"
           }
         ],
         "patterns": [
           {
             "id": "100152",
             "label": "DD/MM/YY",
-            "relevance": 37
+            "relevance": 37,
+            "verified": "F"
           },
           {
             "id": "100153",
             "label": "MM/YY/DD",
-            "relevance": 54
+            "relevance": 54,
+            "verified": "Y"
           }
         ],
         "relatedConcepts": [
           {
             "id": "100652",
             "label": "First Name",
-            "relevance": 44
+            "relevance": 44,
+            "verified": "Y"
           },
           {
             "id": "100653",
             "label": "Last Name",
-            "relevance": 32
+            "relevance": 32,
+            "verified": "Y"
           }
         ],
         "exampleValues": [
           {
             "id": "200652",
             "label": "21/03/2007",
-            "relevance": 90
+            "relevance": 90,
+            "verified": "Y"
           },
           {
             "id": "200653",
             "label": "08/07/2006",
-            "relevance": 80
+            "relevance": 80,
+            "verified": "Y"
           }
         ],
         "exampleColumns": [
           {
             "id": "300652",
             "label": "DOB",
-            "relevance": 90
+            "relevance": 90,
+            "verified": "Y"
           },
           {
             "id": "300653",
             "label": "BIRTH_DAY",
-            "relevance": 80
+            "relevance": 80,
+            "verified": "Y"
           },
           {
             "id": "300654",
             "label": "ORDER_DATE",
-            "relevance": 50
+            "relevance": 50,
+            "verified": "Y"
           }
         ]
       }
