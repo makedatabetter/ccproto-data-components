@@ -4,13 +4,13 @@
 | ------------- | ------------- | -------- | ------- |
 | gid-list-concepts| [View Specs](https://github.com/makedatabetter/ccproto-data-components#gid-list-concepts) | [View Source](https://github.com/makedatabetter-dev/gid-list-concepts)| [View Demo](https://makedatabetter-dev.github.io/gid-list-concepts/) | 
 | gid-concept-details| [View Specs](https://github.com/makedatabetter/ccproto-data-components#gid-concept-details) | [View Source](https://github.com/makedatabetter-dev/gid-concept-details)| [View Demo](https://makedatabetter-dev.github.io/gid-concept-details/) | 
-| gid-curate-concept|  |  
+| gid-curate-concept|  | 
 | gid-concept-health|  |  
-| gid-columns|  |  
-| gid-concept-service|  |  
+| gid-columns|  |  [View Source](https://github.com/makedatabetter-dev/gid-columns)| |
+| gid-concept-service|  |  [View Source](https://github.com/makedatabetter-dev/gid-concept-service)| | 
 | gid-table-samples| | [View Source](https://github.com/makedatabetter-dev/gid-table-samples)| [View Demo](https://makedatabetter-dev.github.io/gid-table-samples/) | 
-| gid-list-entities|  |  
-| gid-recommend-concepts|  |  
+| gid-list-entities| |  [View Source](https://github.com/makedatabetter-dev/gid-list-entities)| |
+| gid-recommend-concepts|  |  [View Source](https://github.com/makedatabetter-dev/gid-recommend-concepts)| |
 
 # Data Components Specifications
 
