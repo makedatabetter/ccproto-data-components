@@ -8,8 +8,7 @@
 | gid-concept-health|  |  
 | gid-columns|  |  
 | gid-concept-service|  |  
-| gid-list-lob-concepts|  |  
-| gid-table-samples|  |  
+| gid-table-samples| [View Specs](https://github.com/makedatabetter/ccproto-data-components#gid-table-samples) | [View Source](https://github.com/makedatabetter-dev/gid-table-samples)| [View Demo](https://makedatabetter-dev.github.io/gid-table-samples/) | 
 | gid-list-entities|  |  
 | gid-recommend-concepts|  |  
 
