@@ -1,3 +1,20 @@
+# Data Components
+
+| Data Components  | Specifications | Source | Demo & Docs |
+| ------------- | ------------- | -------- | ------- |
+| gid-list-concepts| [View Specs](https://github.com/makedatabetter/ccproto-data-components#gid-list-concepts) | [View Source](https://github.com/makedatabetter-dev/gid-list-concepts)| [View Demo](https://makedatabetter-dev.github.io/gid-list-concepts/) | 
+| gid-concept-details|  |  
+| gid-curate-concept|  |  
+| gid-concept-health|  |  
+| gid-columns|  |  
+| gid-concept-service|  |  
+| gid-list-lob-concepts|  |  
+| gid-table-samples|  |  
+| gid-list-entities|  |  
+| gid-recommend-concepts|  |  
+
+# Data Components Specifications
+
 ## gid-list-applications
 
 A data component that provides a list of applications associated with a given concept.  
