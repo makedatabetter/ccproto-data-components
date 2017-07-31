@@ -9,7 +9,7 @@
 | gid-columns|  |  [View Source](https://github.com/makedatabetter-dev/gid-columns)| |
 | gid-concept-service|  |  [View Source](https://github.com/makedatabetter-dev/gid-concept-service)| | 
 | gid-table-samples| | [View Source](https://github.com/makedatabetter-dev/gid-table-samples)| [View Demo](https://makedatabetter-dev.github.io/gid-table-samples/) | 
-| gid-list-entities| |  [View Source](https://github.com/makedatabetter-dev/gid-list-entities)| |
+| gid-list-entities| |  [View Source](https://github.com/makedatabetter-dev/gid-list-entities)|[View Demo](https://makedatabetter-dev.github.io/gid-list-entities/) | 
 | gid-recommend-concepts|  |  [View Source](https://github.com/makedatabetter-dev/gid-recommend-concepts)| |
 
 # Data Components Specifications
