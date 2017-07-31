@@ -304,7 +304,7 @@ Input:
 
 - Concept Id (URL Param)
 
-- ~~List of recommended applications to start with
+- ~~List of recommended applications to start with~~
 
 - Trigger that user has switched from define to explore
 
@@ -312,7 +312,7 @@ Input:
 
 - Explicit yes or no on most of the example columns and some of the example values
 
-- ~~Search string for synonyms, patterns or related concepts
+- ~~Search string for synonyms, patterns or related concepts~~
 
 Sample Input: (as JSON payload)
 
@@ -348,4 +348,4 @@ Output:
 
 - output 2 + revised list of synonyms, patterns and related concepts 
 
-- ~~search results
+- ~~search results~~
