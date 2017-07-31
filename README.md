@@ -4,7 +4,7 @@
 | ------------- | ------------- | -------- | ------- |
 | gid-list-concepts| [View Specs](https://github.com/makedatabetter/ccproto-data-components#gid-list-concepts) | [View Source](https://github.com/makedatabetter-dev/gid-list-concepts)| [View Demo](https://makedatabetter-dev.github.io/gid-list-concepts/) | 
 | gid-concept-details| [View Specs](https://github.com/makedatabetter/ccproto-data-components#gid-concept-details) | [View Source](https://github.com/makedatabetter-dev/gid-concept-details)| [View Demo](https://makedatabetter-dev.github.io/gid-concept-details/) | 
-| gid-curate-concept|  | 
+| gid-curate-concept| [View Specs](https://github.com/makedatabetter/ccproto-data-components#gid-curate-concept)  | 
 | gid-concept-health|  |  
 | gid-columns|  |  [View Source](https://github.com/makedatabetter-dev/gid-columns)| |
 | gid-concept-service|  |  [View Source](https://github.com/makedatabetter-dev/gid-concept-service)| | 
@@ -93,6 +93,15 @@ API endpoint:
 
     GET /concepts
 
+Input:
+
+- User Id
+
+Output:
+
+- List of concepts with key metadata (items being displayed on listing page)
+
+
 The output of this components will be as follows:
 
     {
@@ -150,6 +159,15 @@ A data component to get detailed information for a given concept and user id
 API endpoint:
 
     GET /concepts/{id}
+    
+Input:
+- User Id
+- Concept Id
+
+Output:
+- Key Metadata
+- Concept Detail
+
 
 The output of this components will be as follows:
 
@@ -264,3 +282,40 @@ The output of this components will be as follows:
         ]
       }
     }
+
+## gid-curate-concept
+
+A data component to curate concept
+
+    <gid-curate-concept conceptId='1' userId='1'></<gid-curate-concept>
+
+API endpoint:
+
+    GET /concepts/{id}
+
+Input:
+
+- User Id
+
+- Concept Id
+
+- List of recommended applications to start with
+
+- Trigger that user has switched from define to explore
+
+- Explicit yes or no on most of the synonyms, patterns and concepts
+
+- Explicit yes or no on most of the example columns and some of the example values
+
+- Search string for synonyms, patterns or related concepts
+
+Output:
+- 5 synonyms (with likelihood)
+- 5 patterns (with likelihood)
+- 5 related concepts (with likelihood)
+
+- list of 10 example columns and 100 example values (prioritised by relevance)
+
+- output 2 + revised list of synonyms, patterns and related concepts 
+
+- search results
